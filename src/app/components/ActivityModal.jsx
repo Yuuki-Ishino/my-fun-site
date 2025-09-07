@@ -43,7 +43,7 @@ export default function ActivityModal({ activity, onClose }) {
               <p>活動場所: {activity.location || "未定"}</p>
             </div>
             <div className="flex items-center gap-2">
-              <p>参加人数: {activity.num_people || "未定"}</p>
+              <p>参加人数: {activity.numPeople || "未定"}</p>
             </div>
           </div>
 
