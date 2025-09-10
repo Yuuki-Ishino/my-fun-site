@@ -44,7 +44,7 @@ export default function CallbackPage() {
 				return;
 			}
 		}
-      router.replace("/"); // ログイン後トップページへ
+      router.replace("https://bbooth.vercel.app/"); // ログイン後トップページへ
     };
 
     getSession();
