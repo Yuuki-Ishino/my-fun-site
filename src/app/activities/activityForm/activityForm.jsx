@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
-import { supabase } from "$/utils/supabase/client";
+import { createClient } from "$/utils/supabase/client";
 
 export default function ActivityForm({ initialData, onSubmit }) {
+  const supabase = createClient();
   const [form, setForm] = useState(
     initialData || { title: "", date: "", location: "", content: "", image: "" }
   );
