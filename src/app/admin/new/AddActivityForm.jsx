@@ -20,12 +20,13 @@ export default function AddActivityForm() {
 			const options = {
 				maxSizeMB: 0.1,
 				maxWidthOrHeight: 1920,
-				useWebWorker: true,
+				useWebWorker: false,
 			};
 
 			const compressedFile = await imageCompression(selectedFile, options);
 			setFile(compressedFile);
 		} catch (error) {
+			alert("画像圧縮失敗");
 			console.log("画像圧縮エラー", error);
 			setFile(selectedFile);
 		}
