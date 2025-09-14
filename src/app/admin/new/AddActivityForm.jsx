@@ -26,9 +26,9 @@ export default function AddActivityForm() {
 			const compressedFile = await imageCompression(selectedFile, options);
 			setFile(compressedFile);
 		} catch (error) {
-			alert("画像圧縮失敗");
+			alert("画像圧縮に失敗しました。別の画像を選んでください。");
 			console.log("画像圧縮エラー", error);
-			setFile(selectedFile);
+			setFile(null);
 		}
 	};
 
@@ -45,6 +45,7 @@ export default function AddActivityForm() {
 			const {data} = supabase.storage.from("activity-imgs").getPublicUrl(fileName);
 			imageUrl = data.publicUrl;
 		}
+		formData.delete("image");
 		formData.set("imageUrl", imageUrl);
 		await addActivity(formData);
 	};
