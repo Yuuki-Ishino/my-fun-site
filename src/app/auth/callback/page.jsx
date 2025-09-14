@@ -10,6 +10,7 @@ export default function CallbackPage() {
 
   useEffect(() => {
     const handleLogin = async () => {
+		await delay(5000);
       // セッション取得
       const { data: { session }, error: sessionError } = await supabase.auth.getSession();
       if (sessionError || !session) {
@@ -18,6 +19,7 @@ export default function CallbackPage() {
       }
 
       const user = session.user;
+	  console.log(user);
 
       try {
         // profiles に存在するか確認

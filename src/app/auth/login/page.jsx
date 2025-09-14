@@ -7,7 +7,7 @@ export default function LoginPage() {
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: '/auth/callback', // OAuth完了後に戻るページ
+        redirectTo: 'https://bbooth.vercel.app/auth/callback', // OAuth完了後に戻るページ
       },
     });
   };
@@ -16,7 +16,7 @@ export default function LoginPage() {
     <div className="flex items-center justify-center h-screen">
       <button
         onClick={handleLogin}
-        className="bg-red-500 text-white px-4 py-2 rounded"
+        className="bg-blue-500 text-white px-4 py-2 rounded"
       >
         Sign in with Google
       </button>
