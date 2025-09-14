@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "$/utils/supabase/server";
 
 export async function addActivity(formData) {
-	const supabase = await createClient();
+	const supabase = createClient();
 
 	const title = formData.get("title");
 	const date = formData.get("date");
