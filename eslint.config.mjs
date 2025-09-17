@@ -11,6 +11,12 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals"),
+  // {
+  //   plugin: ["prettier"],
+  //   rules: {
+  //     "prettier/prettier": "error"
+  //   },
+  // },
   {
     ignores: [
       "node_modules/**",

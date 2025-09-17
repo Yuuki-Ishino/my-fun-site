@@ -4,28 +4,26 @@ import Button from "../components/Button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-
 function ActivitySection() {
-  
   const [pastItems, setPastItems] = useState([]);
   const [futureItems, setFutureItems] = useState([]);
 
   useEffect(() => {
     fetch("/data/activities.json")
-    .then((res) => res.json())
-    .then((data) => {
-      const now = new Date();
-      const past = data.filter((item) => new Date(item.date) < now);
-      const future = data.filter((item) => new Date(item.date) >= now);
+      .then((res) => res.json())
+      .then((data) => {
+        const now = new Date();
+        const past = data.filter((item) => new Date(item.date) < now);
+        const future = data.filter((item) => new Date(item.date) >= now);
 
-      past.sort((a, b) => new Date(b.date) - new Date(a.date));
-      future.sort((a, b) => new Date(a.date) - new Date(b.date));
+        past.sort((a, b) => new Date(b.date) - new Date(a.date));
+        future.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-      setPastItems(past);
-      setFutureItems(future);
-    })
-    .catch((err) => console.error(err))
-  }, [])
+        setPastItems(past);
+        setFutureItems(future);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <section className="text-white lg:py-20">
@@ -59,7 +57,9 @@ function ActivitySection() {
         </div>
         {/* MOREボタン */}
         <div className="text-center pb-14">
-          <Button href="/activities" timeFilter="past" >SEE MORE</Button>
+          <Button href="/activities" timeFilter="past">
+            SEE MORE
+          </Button>
         </div>
 
         {/* 未来の活動 */}
@@ -92,7 +92,9 @@ function ActivitySection() {
 
         {/* MOREボタン */}
         <div className="text-center">
-          <Button href="/activities" timeFilter="future">SEE MORE</Button>
+          <Button href="/activities" timeFilter="future">
+            SEE MORE
+          </Button>
         </div>
       </div>
     </section>

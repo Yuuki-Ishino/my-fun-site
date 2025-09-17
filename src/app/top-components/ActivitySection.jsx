@@ -17,15 +17,14 @@ export default async function ActivitySection() {
         {/* カード一覧 */}
         <div className="flex flex-col lg:flex-row justify-between">
           {pastItems.map((item) => (
-            <ActivityCardClient 
-              key={item.id}
-              activity={item}
-            />
+            <ActivityCardClient key={item.id} activity={item} />
           ))}
         </div>
         {/* MOREボタン */}
         <div className="text-center pb-14">
-          <Button href="/activities" timeFilter="past" >SEE MORE</Button>
+          <Button href="/activities" timeFilter="past">
+            SEE MORE
+          </Button>
         </div>
 
         {/* 未来の活動 */}
@@ -36,16 +35,15 @@ export default async function ActivitySection() {
         {/* カード一覧 */}
         <div className="flex flex-col lg:flex-row justify-between ">
           {latestItems.map((item) => (
-            <ActivityCardClient 
-              key={item.id}
-              activity={item}
-            />
+            <ActivityCardClient key={item.id} activity={item} />
           ))}
         </div>
 
         {/* MOREボタン */}
         <div className="text-center">
-          <Button href="/activities" timeFilter="future">SEE MORE</Button>
+          <Button href="/activities" timeFilter="future">
+            SEE MORE
+          </Button>
         </div>
       </div>
     </section>

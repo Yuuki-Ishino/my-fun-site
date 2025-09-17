@@ -6,6 +6,6 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 export default function nowJST() {
-	const nowJST = dayjs().tz("Asia/Tokyo").format("YYYY/MM/DD");
-	return (nowJST);
+  const nowJST = dayjs().tz("Asia/Tokyo").format("YYYY/MM/DD");
+  return nowJST;
 }

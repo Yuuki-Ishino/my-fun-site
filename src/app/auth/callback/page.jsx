@@ -11,14 +11,17 @@ export default function CallbackPage() {
   useEffect(() => {
     const handleLogin = async () => {
       // セッション取得
-      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+      const {
+        data: { session },
+        error: sessionError,
+      } = await supabase.auth.getSession();
       if (sessionError || !session) {
         console.error("セッション取得失敗:", sessionError);
         return;
       }
 
       const user = session.user;
-	  console.log(user);
+      console.log(user);
 
       try {
         // profiles に存在するか確認
@@ -59,5 +62,9 @@ export default function CallbackPage() {
     handleLogin();
   }, [router, supabase]);
 
-  return <p>ログイン処理中…</p>;
+  return (
+    <div>
+      <p>ログイン処理中…</p>
+    </div>
+  );
 }

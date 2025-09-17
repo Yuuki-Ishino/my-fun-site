@@ -1,23 +1,22 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 function Header() {
-
   const navItems = [
-    {href: '/', label: '私たちについて'},
-    {href: '/intro', label: '活動紹介'},
-    {href: '/', label: '活動一覧'},
-    {href: '/', label: 'お問い合わせ'},
+    { href: "/", label: "私たちについて" },
+    { href: "/intro", label: "活動紹介" },
+    { href: "/", label: "活動一覧" },
+    { href: "/", label: "お問い合わせ" },
   ];
 
   const renderNavItems = () =>
     navItems.map((item, index) => (
       <li key={index} className="ml-[50px]">
-          <Link
-            href={item.href}
-            className="block py-5 font-bold transition-opacity duration-200 hover:opacity-60"
-          >
-            {item.label}
-          </Link>
+        <Link
+          href={item.href}
+          className="block py-5 font-bold transition-opacity duration-200 hover:opacity-60"
+        >
+          {item.label}
+        </Link>
       </li>
     ));
 
@@ -32,7 +31,7 @@ function Header() {
             className="h-[50px]"
           />
         </a>
-        
+
         {/* ナビゲーション */}
         <nav>
           <ul className="flex">

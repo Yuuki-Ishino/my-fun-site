@@ -1,6 +1,5 @@
 import { FaLine, FaXTwitter, FaInstagram } from "react-icons/fa6";
 
-
 function ContactSection() {
   return (
     <section id="contact" className="text-white pt-20">
@@ -52,7 +51,6 @@ function ContactSection() {
             >
               <FaLine />
             </a>
-
           </div>
         </div>
       </div>
@@ -61,4 +59,3 @@ function ContactSection() {
 }
 
 export default ContactSection;
-

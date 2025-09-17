@@ -4,7 +4,7 @@ function ContactSection({
   text,
   buttonText,
   imageSrc,
-  imageAlt
+  imageAlt,
 }) {
   return (
     <section className="text-white py-20">
@@ -38,4 +38,3 @@ function ContactSection({
 }
 
 export default ContactSection;
-

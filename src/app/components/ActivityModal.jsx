@@ -16,7 +16,7 @@ export default function ActivityModal({ activity, onClose }) {
     fetchRole();
   }, []);
 
-	if (!activity) return null;
+  if (!activity) return null;
 
   return (
     <RemoveScroll>
@@ -54,7 +54,9 @@ export default function ActivityModal({ activity, onClose }) {
           />
 
           {/* タイトル */}
-          <h1 className="text-2xl font-bold py-4 border-b border-white">{activity.title}</h1>
+          <h1 className="text-2xl font-bold py-4 border-b border-white">
+            {activity.title}
+          </h1>
 
           {/* 投稿情報 */}
           <div className="py-4 space-y-3 border-b border-white">
@@ -70,7 +72,9 @@ export default function ActivityModal({ activity, onClose }) {
           </div>
 
           {/* 詳細説明 */}
-          <p className="mt-6 leading-relaxed whitespace-pre-line">{activity.description}</p>
+          <p className="mt-6 leading-relaxed whitespace-pre-line">
+            {activity.description}
+          </p>
         </div>
       </div>
     </RemoveScroll>

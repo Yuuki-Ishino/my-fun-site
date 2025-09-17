@@ -5,7 +5,13 @@ import { createClient } from "$/utils/supabase/client";
 export default function ActivityForm({ initialData, onSubmit }) {
   const supabase = createClient();
   const [form, setForm] = useState(
-    initialData || { title: "", date: "", location: "", content: "", image: "" }
+    initialData || {
+      title: "",
+      date: "",
+      location: "",
+      content: "",
+      image: "",
+    },
   );
   const [file, setFile] = useState(null);
 
@@ -79,7 +85,10 @@ export default function ActivityForm({ initialData, onSubmit }) {
       />
       <input type="file" onChange={handleFileChange} />
 
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+      <button
+        type="submit"
+        className="bg-blue-500 text-white px-4 py-2 rounded"
+      >
         保存
       </button>
     </form>

@@ -5,9 +5,9 @@ export default function LoginPage() {
   const supabase = createClient();
   const handleLogin = async () => {
     await supabase.auth.signInWithOAuth({
-      provider: 'google',
+      provider: "google",
       options: {
-        redirectTo: 'https://bbooth.vercel.app/auth/callback', // OAuth完了後に戻るページ
+        redirectTo: "/auth/callback", // OAuth完了後に戻るページ
       },
     });
   };

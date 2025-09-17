@@ -15,10 +15,7 @@ export default async function ActivitySection() {
         {/* カード一覧 */}
         <div className="flex flex-col lg:flex-row justify-between ">
           {activities.map((item) => (
-            <ActivityCardClient 
-              key={item.id}
-              activity={item}
-            />
+            <ActivityCardClient key={item.id} activity={item} />
           ))}
         </div>
       </div>

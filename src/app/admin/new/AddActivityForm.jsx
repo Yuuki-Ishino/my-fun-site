@@ -8,59 +8,138 @@ import { createClient } from "$/utils/supabase/client";
 import dayjs from "dayjs";
 
 export default function AddActivityForm() {
-	const [file, setFile] = useState(null);
-	const { pending } = useFormStatus();
-	const supabase = createClient();
+  const supabase = createClient();
+  const [file, setFile] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const { pending } = useFormStatus();
 
-	const handleFileChange = async (e) => {
-		const selectedFile = e.target.files[0];
-		if (!selectedFile) return;
+  const handleFileChange = async (e) => {
+    const selectedFile = e.target.files[0];
+    if (!selectedFile) return;
 
-		try {
-			const options = {
-				maxSizeMB: 0.1,
-				maxWidthOrHeight: 1920,
-				useWebWorker: false,
-			};
+    try {
+      const options = {
+        maxSizeMB: 0.1,
+        maxWidthOrHeight: 1920,
+        useWebWorker: false,
+      };
 
-			const compressedFile = await imageCompression(selectedFile, options);
-			setFile(compressedFile);
-		} catch (error) {
-			alert("画像圧縮に失敗しました。別の画像を選んでください。");
-			console.log("画像圧縮エラー", error);
-			setFile(null);
-		}
-	};
+      const compressedFile = await imageCompression(selectedFile, options);
+      setFile(compressedFile);
 
-	const handleSubmit = async (formData) => {
-		let imageUrl = null;
-		
-		if (file) {
-			const fileName = `${dayjs().format("YYYYMMDD_HHmmss")}-${file.name}`;
-			const {error} = await supabase.storage
-				.from("activity-imgs")
-				.upload(fileName, file, { contentType: file.type});
-			if (error) throw error;
+      setPreviewUrl(URL.createObjectURL(compressedFile));
+    } catch (error) {
+      alert("画像圧縮に失敗しました。別の画像を選んでください。");
+      console.log("画像圧縮エラー", error);
+      setFile(null);
+    }
+  };
 
-			const {data} = supabase.storage.from("activity-imgs").getPublicUrl(fileName);
-			imageUrl = data.publicUrl;
-		}
-		formData.delete("image");
-		formData.set("imageUrl", imageUrl);
-		await addActivity(formData);
-	};
+  const handleSubmit = async (formData) => {
+    let imageUrl = null;
 
-	return (
-		<form action={handleSubmit} className="space-y-4 max-w-md mx-auto p-4 pt-20" >
-			<input type="text" name="title" placeholder="タイトル" className="border p-2 w-full" required />
-			<input type="date" name="date" className="border p-2 w-full" required />
-			<input type="text" name="location" placeholder="場所" className="border p-2 w-full" />
-			<input type="number" name="numPeople" placeholder="参加人数" className="border p-2 w-full" />
-			<textarea name="description" placeholder="説明" className="border p-2 w-full whitespace-pre-line" rows={5} />
-			<input type="file" name="image" className="border" accept="image/*" onChange={handleFileChange}/>
-			<button type="submit" disabled={pending} className="bg-blue-500 text-white px-4 py-2 rounded">
-				{pending ? "送信中..." : "追加"}
-			</button>
-		</form>
-	);
+    if (file) {
+      const fileName = `${dayjs().format("YYYYMMDD_HHmmss")}-${file.name}`;
+      const { error } = await supabase.storage
+        .from("activity-imgs")
+        .upload(fileName, file, { contentType: file.type });
+      if (error) throw error;
+
+      const { data } = supabase.storage
+        .from("activity-imgs")
+        .getPublicUrl(fileName);
+      imageUrl = data.publicUrl;
+    }
+    formData.delete("image");
+    formData.set("imageUrl", imageUrl);
+    await addActivity(formData);
+  };
+
+  return (
+    <form
+      action={handleSubmit}
+      className="bg-[#181619] pt-20 text-white w-[100%] max-w-[800px] p-6 space-y-2 mx-auto"
+    >
+      <h2 className="text-2xl font-bold border-b border-white pb-2">
+        新規投稿
+      </h2>
+
+      <div className="border-b border-white pb-2">
+        {/* 画像 */}
+        <img
+          src={previewUrl || "/images/nothing.jpg"}
+          alt="プレビュー"
+          className="w-full h-64 object-cover rounded-lg mb-2"
+        />
+
+        {/* 画像アップロード */}
+        <input
+          type="file"
+          name="image"
+          accept="image/*"
+          onChange={handleFileChange}
+          className="bg-transparent border border-white/20 rounded p-2 w-full text-white file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white hover:file:bg-blue-600"
+        />
+      </div>
+
+      <div className="border-b border-white pb-2">
+        {/* タイトル */}
+        <input
+          type="text"
+          name="title"
+          placeholder="タイトル"
+          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 "
+          required
+        />
+      </div>
+
+      <div className="border-b border-white space-y-2 pb-2">
+        {/* 日付 */}
+        <input
+          type="date"
+          name="date"
+          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+
+        {/* 場所 */}
+        <input
+          type="text"
+          name="location"
+          placeholder="場所"
+          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+
+        {/* 参加人数 */}
+        <input
+          type="number"
+          name="numPeople"
+          placeholder="参加人数"
+          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
+
+      <div className="border-b border-white ">
+        {/* 詳細説明 */}
+        <textarea
+          name="description"
+          placeholder="説明"
+          className="bg-transparent border border-white/50 rounded p-2 w-full whitespace-pre-line focus:outline-none focus:ring-2 focus:ring-blue-500"
+          rows={7}
+          required
+        />
+      </div>
+
+      {/* 送信ボタン */}
+      <button
+        type="submit"
+        disabled={pending}
+        className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg transition"
+      >
+        {pending ? "送信中..." : "追加"}
+      </button>
+    </form>
+  );
 }

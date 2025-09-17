@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
-section, footer{
-	background-color: #181619;
+section,
+footer {
+  background-color: #181619;
 }
 
 section.no-bg {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .bg-img::before {
@@ -14,13 +15,13 @@ section.no-bg {
   height: 800px;
   inset: 0;
   z-index: -1;
-  background-image: url('top-image.jpg');
+  background-image: url("top-image.jpg");
   background-size: cover;
   background-position: center;
 }
 
 @media (max-width: 770px) {
   .bg-img::before {
-    background-image: url('top-img01.jpg');
+    background-image: url("top-img01.jpg");
   }
 }
