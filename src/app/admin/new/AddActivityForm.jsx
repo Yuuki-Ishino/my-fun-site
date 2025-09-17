@@ -88,7 +88,7 @@ export default function AddActivityForm() {
           type="text"
           name="title"
           placeholder="タイトル"
-          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 "
+          className="bg-transparent border border-white/20 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 "
           required
         />
       </div>
@@ -98,7 +98,7 @@ export default function AddActivityForm() {
         <input
           type="date"
           name="date"
-          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-transparent border border-white/20 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
 
@@ -107,7 +107,7 @@ export default function AddActivityForm() {
           type="text"
           name="location"
           placeholder="場所"
-          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-transparent border border-white/20 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
 
@@ -116,7 +116,7 @@ export default function AddActivityForm() {
           type="number"
           name="numPeople"
           placeholder="参加人数"
-          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-transparent border border-white/20 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
@@ -126,7 +126,7 @@ export default function AddActivityForm() {
         <textarea
           name="description"
           placeholder="説明"
-          className="bg-transparent border border-white/50 rounded p-2 w-full whitespace-pre-line focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-transparent border border-white/20 rounded p-2 w-full whitespace-pre-line focus:outline-none focus:ring-2 focus:ring-blue-500"
           rows={7}
           required
         />

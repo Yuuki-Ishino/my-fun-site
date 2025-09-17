@@ -103,7 +103,7 @@ export default function EditActivityForm({ activity }) {
           name="image"
           accept="image/*"
           onChange={handleFileChange}
-          className="bg-transparent border border-white/20 rounded p-2 w-full text-white file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white hover:file:bg-blue-600"
+          className="bg-transparent border border-white/20 rounded p-2 w-full text-white file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white hover:file:bg-blue-600 active:file:bg-blue-600"
         />
       </div>
 
@@ -115,7 +115,7 @@ export default function EditActivityForm({ activity }) {
           onChange={handleChange}
           value={formData.title ?? ""}
           placeholder="タイトル"
-          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-transparent border border-white/20 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
@@ -127,7 +127,7 @@ export default function EditActivityForm({ activity }) {
           name="date"
           onChange={handleChange}
           value={formData.date ?? ""}
-          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-transparent border border-white/20 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
 
@@ -138,7 +138,7 @@ export default function EditActivityForm({ activity }) {
           onChange={handleChange}
           value={formData.location ?? ""}
           placeholder="場所"
-          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-transparent border border-white/20 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
 
@@ -149,7 +149,7 @@ export default function EditActivityForm({ activity }) {
           onChange={handleChange}
           value={formData.numPeople ?? ""}
           placeholder="参加人数"
-          className="bg-transparent border border-white/50 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-transparent border border-white/20 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
@@ -161,7 +161,7 @@ export default function EditActivityForm({ activity }) {
           onChange={handleChange}
           value={formData.description ?? ""}
           placeholder="説明"
-          className="bg-transparent border border-white/50 rounded p-2 w-full whitespace-pre-line focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-transparent border border-white/20 rounded p-2 w-full whitespace-pre-line focus:outline-none focus:ring-2 focus:ring-blue-500"
           rows={7}
           required
         />
@@ -170,10 +170,17 @@ export default function EditActivityForm({ activity }) {
       {/* 送信ボタン */}
       <button
         type="submit"
-        disabled={pending}
-        className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg transition"
+        className="w-full bg-blue-500 hover:bg-blue-600 active:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg transition"
       >
-        {pending ? "編集中..." : "編集"}
+        更新
+      </button>
+
+      {/* 削除ボタン */}
+      <button
+        type=""
+        className="w-full bg-red-500 hover:bg-red-600 active:bg-red-500 text-white font-semibold px-4 py-2 rounded-lg transition"
+      >
+        削除
       </button>
     </form>
   );

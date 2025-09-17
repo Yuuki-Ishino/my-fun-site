@@ -18,11 +18,16 @@ export default function LogoutPage() {
       }
 
       // ホームページにリダイレクト
-      alert("ログアウトしました。");
       router.replace("/");
     };
     logout();
   }, [supabase, router]);
 
-  return <p>ログアウト中…</p>;
+  return (
+    <section className="flex items-center justify-center h-screen">
+      <div className="text-white text-2xl">
+        Logout...
+      </div>
+    </section>
+  );
 }

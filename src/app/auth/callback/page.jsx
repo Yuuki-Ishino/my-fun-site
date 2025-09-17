@@ -63,8 +63,10 @@ export default function CallbackPage() {
   }, [router, supabase]);
 
   return (
-    <div>
-      <p>ログイン処理中…</p>
-    </div>
+    <section className="flex items-center justify-center h-screen">
+      <div>
+        Login...
+      </div>
+    </section>
   );
 }

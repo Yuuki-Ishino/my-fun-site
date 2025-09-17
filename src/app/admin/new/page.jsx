@@ -1,10 +1,10 @@
 import AddActivityForm from "./AddActivityForm";
 
-import { createClient } from "$/utils/supabase/server";
+import { requireAdmin } from "$/utils/supabase/reqireAdmin";
 import { redirect } from "next/navigation";
 
 export default async function addActivityForm() {
-  const supabase = createClient();
+  const { supabase } = await requireAdmin();
   const {
     data: { session },
   } = await supabase.auth.getSession();

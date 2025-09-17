@@ -13,13 +13,13 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <section className="flex items-center justify-center h-screen">
       <button
         onClick={handleLogin}
-        className="bg-blue-500 text-white px-4 py-2 rounded"
+        className="bg-blue-500 hover:bg-blue-600 active:bg-blue-600 text-white px-4 py-2 rounded"
       >
         Sign in with Google
       </button>
-    </div>
+    </section>
   );
 }
