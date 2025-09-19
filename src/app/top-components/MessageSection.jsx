@@ -33,7 +33,7 @@ function MessageSection() {
               <br />
             </p>
             <div className="flex justify-center">
-              <Button href="/about_us">SEE MORE</Button>
+              <Button href="/aboutUs">SEE MORE</Button>
             </div>
           </div>
         </div>

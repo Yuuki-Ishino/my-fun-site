@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Footer() {
   const navItems = [
-    { href: "/about_us", label: "私たちについて" },
+    { href: "/aboutUs", label: "私たちについて" },
     { href: "/members", label: "メンバー紹介" },
     { href: "/activities", label: "活動一覧" },
     { href: "/#contact", label: "お問い合わせ" },

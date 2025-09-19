@@ -3,7 +3,6 @@
 import { useState } from "react";
 import imageCompression from "browser-image-compression";
 import { addActivity } from "./action";
-import { useFormStatus } from "react-dom";
 import { createClient } from "$/utils/supabase/client";
 import dayjs from "dayjs";
 
@@ -11,7 +10,7 @@ export default function AddActivityForm() {
   const supabase = createClient();
   const [file, setFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
-  const { pending } = useFormStatus();
+  const [submitting, setSubmitting] = useState(false);
 
   const handleFileChange = async (e) => {
     const selectedFile = e.target.files[0];
@@ -30,34 +29,60 @@ export default function AddActivityForm() {
       setPreviewUrl(URL.createObjectURL(compressedFile));
     } catch (error) {
       alert("画像圧縮に失敗しました。別の画像を選んでください。");
-      console.log("画像圧縮エラー", error);
       setFile(null);
     }
   };
 
-  const handleSubmit = async (formData) => {
-    let imageUrl = null;
+  const handleSubmit = async (e) => {
+		e.preventDefault();
+		if (submitting) return ;
+		setSubmitting(true);
 
-    if (file) {
-      const fileName = `${dayjs().format("YYYYMMDD_HHmmss")}-${file.name}`;
-      const { error } = await supabase.storage
-        .from("activity-imgs")
-        .upload(fileName, file, { contentType: file.type });
-      if (error) throw error;
+		try {
+			const formData = new FormData(e.currentTarget);
 
-      const { data } = supabase.storage
-        .from("activity-imgs")
-        .getPublicUrl(fileName);
-      imageUrl = data.publicUrl;
-    }
-    formData.delete("image");
-    formData.set("imageUrl", imageUrl);
-    await addActivity(formData);
+			if (file) {
+				const fileName = `${dayjs().format("YYYYMMDD_HHmmss")}-${file.name}`;
+				const blobFile = new File([file], fileName, { type: file.type});
+				formData.set("image", blobFile);
+			}
+
+			await addActivity(formData);
+			window.location.href = "/activities";
+		} catch (err) {
+			console.error(err);
+			alert("投稿に失敗しました。");
+		} finally {
+			setSubmitting(false);
+		}
+
+		// try {
+		// 	let imageUrl = null;
+
+		// 	if (file) {
+		// 		const fileName = `${dayjs().format("YYYYMMDD_HHmmss")}-${file.name}`;
+		// 		const { error } = await supabase.storage
+		// 			.from("activity-imgs")
+		// 			.upload(fileName, file, { contentType: file.type });
+		// 		if (error) throw error;
+
+		// 		const { data } = supabase.storage
+		// 			.from("activity-imgs")
+		// 			.getPublicUrl(fileName);
+		// 		imageUrl = data.publicUrl;
+		// 	}
+
+		// 	formData.delete("image");
+		// 	formData.set("imageUrl", imageUrl);
+		// 	await addActivity(formData);
+		// } finally {
+		// 	setSubmitting(false);
+		// }
   };
 
   return (
     <form
-      action={handleSubmit}
+      onSubmit={handleSubmit}
       className="bg-[#181619] pt-20 text-white w-[100%] max-w-[800px] p-6 space-y-2 mx-auto"
     >
       <h2 className="text-2xl font-bold border-b border-white pb-2">
@@ -108,7 +133,6 @@ export default function AddActivityForm() {
           name="location"
           placeholder="場所"
           className="bg-transparent border border-white/20 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
         />
 
         {/* 募集人数 */}
@@ -135,17 +159,16 @@ export default function AddActivityForm() {
           placeholder="説明"
           className="bg-transparent border border-white/20 rounded p-2 w-full whitespace-pre-line focus:outline-none focus:ring-2 focus:ring-blue-500"
           rows={7}
-          required
         />
       </div>
 
       {/* 送信ボタン */}
       <button
         type="submit"
-        disabled={pending}
+        disabled={submitting}
         className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg transition"
       >
-        {pending ? "送信中..." : "追加"}
+        {submitting ? "送信中..." : "追加"}
       </button>
     </form>
   );
