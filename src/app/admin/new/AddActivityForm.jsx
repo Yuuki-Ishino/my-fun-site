@@ -46,7 +46,7 @@ export default function AddActivityForm() {
 				const blobFile = new File([file], fileName, { type: file.type});
 				formData.set("image", blobFile);
 			}
-			
+
 			await addActivity(formData);
 			window.location.href = "/activities";
 		} catch (err) {
@@ -100,6 +100,7 @@ export default function AddActivityForm() {
         <input
           type="date"
           name="date"
+					placeholder="日付"
           className="bg-transparent border border-white/20 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
