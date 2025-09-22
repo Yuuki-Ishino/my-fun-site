@@ -15,6 +15,8 @@ export const metadata = {
   },
 };
 
+export const revalidate = 60;
+
 export default function Page() {
   return (
     <div className="bg-img">

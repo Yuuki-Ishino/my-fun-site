@@ -21,10 +21,10 @@ export default function ActivityCardClient({ activity }) {
           alt={activity.title}
           className="w-full h-[225px] rounded-[20px] object-cover hover:opacity-70 active:opacity-70"
         />
-        <p className="bg-white text-black font-bold inline-block border-2 absolute bottom-[6px] left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-[10px]">
+        <p className="bg-white/90 text-black font-bold inline-block border-black/90 border-1 absolute bottom-[6px] left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-[10px]">
           {activity.title}
         </p>
-        <p className="bg-white text-black font-bold inline-block border-2 absolute top-[10px] right-[10px] px-1.5 py-2 rounded-[10px]">
+        <p className="bg-white/90 text-black font-bold inline-block border-black/90 border-1 absolute top-[10px] right-[10px] px-1.5 py-2 rounded-[10px]">
           {dayjs(activity.date).format("M月D日(ddd)")}
         </p>
       </div>

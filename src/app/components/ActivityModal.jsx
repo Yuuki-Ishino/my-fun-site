@@ -76,9 +76,6 @@ export default function ActivityModal({ activity, onClose }) {
             <div className="flex items-center gap-2">
               <p>募集人数: {activity.capacity || "未確定"}</p>
             </div>
-            <div className="flex items-center gap-2">
-              <p>参加人数: {activity.numPeople || "未確定"}</p>
-            </div>
           </div>
 
           {/* 詳細説明 */}

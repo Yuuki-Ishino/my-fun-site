@@ -38,7 +38,7 @@ export default function EditActivityForm({ activity }) {
 
     try {
       const options = {
-        maxSizeMB: 0.1,
+        maxSizeMB: 0.3,
         maxWidthOrHeight: 1920,
         useWebWorker: false,
       };
