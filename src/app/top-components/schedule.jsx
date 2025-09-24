@@ -34,7 +34,7 @@ export default function TimeSchedule() {
               onClick={() => setSelectedActivity(item)}
             >
               <p className="text-sm text-gray-300">
-                {item.date 
+                {item.date
                   ? item.subdate
                     ? `${dayjs(item.date).format("M月D日(ddd)")} - ${dayjs(item.subdate).format("M月D日(ddd)")}`
                     : dayjs(item.date).format("M月D日(ddd)")

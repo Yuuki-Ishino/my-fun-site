@@ -34,27 +34,27 @@ export default function AddActivityForm() {
   };
 
   const handleSubmit = async (e) => {
-		e.preventDefault();
-		if (submitting) return ;
-		setSubmitting(true);
+    e.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
 
-		try {
-			const formData = new FormData(e.currentTarget);
+    try {
+      const formData = new FormData(e.currentTarget);
 
-			if (file) {
-				const fileName = `${dayjs().format("YYYYMMDD_HHmmss")}-${file.name}`;
-				const blobFile = new File([file], fileName, { type: file.type});
-				formData.set("image", blobFile);
-			}
+      if (file) {
+        const fileName = `${dayjs().format("YYYYMMDD_HHmmss")}-${file.name}`;
+        const blobFile = new File([file], fileName, { type: file.type });
+        formData.set("image", blobFile);
+      }
 
-			await addActivity(formData);
-			window.location.href = "/activities";
-		} catch (err) {
-			console.error(err);
-			alert("投稿に失敗しました。");
-		} finally {
-			setSubmitting(false);
-		}
+      await addActivity(formData);
+      window.location.href = "/activities";
+    } catch (err) {
+      console.error(err);
+      alert("投稿に失敗しました。");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (

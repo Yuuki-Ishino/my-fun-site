@@ -68,9 +68,7 @@ export default function CallbackPage() {
 
   return (
     <section className="flex items-center justify-center h-screen">
-      <div>
-        Login...
-      </div>
+      <div>Login...</div>
     </section>
   );
 }

@@ -34,8 +34,8 @@ export default function ActivityCardClient({ activity }) {
         </p>
         {activity.subdate && (
           <p className="bg-white/90 text-black font-bold inline-block border-black/90 border-1 absolute top-14 right-2 px-1.5 py-2 rounded-[10px]">
-          {dayjs(activity.subdate).format("M月D日(ddd)")}
-        </p>
+            {dayjs(activity.subdate).format("M月D日(ddd)")}
+          </p>
         )}
       </div>
 

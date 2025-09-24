@@ -39,7 +39,7 @@ function Header() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const barColor = session ? "bg-green-400" : "bg-white"
+  const barColor = session ? "bg-green-400" : "bg-white";
 
   if (loading) {
     return null;
@@ -90,11 +90,17 @@ function Header() {
         {/* ハンバーガーアイコン */}
         <div className="lg:hidden mr-5">
           {isOpen ? (
-            <button onClick={toggleMenu} className="focus:outline-none  active:bg-gray-700">
+            <button
+              onClick={toggleMenu}
+              className="focus:outline-none  active:bg-gray-700"
+            >
               <div className="w-6 font-bold">X</div>
             </button>
           ) : (
-            <button onClick={toggleMenu} className="focus:outline-none  active:bg-gray-700">
+            <button
+              onClick={toggleMenu}
+              className="focus:outline-none  active:bg-gray-700"
+            >
               <div className={`w-6 h-0.5 ${barColor} mb-2`}></div>
               <div className={`w-6 h-0.5 ${barColor}`}></div>
             </button>

@@ -28,8 +28,7 @@ function MessageSection() {
               そんなメリハリを大切にしています。
               <br />
               <br />
-              ボランティアをもっと身近に、
-              そして想いを伝え、繋いでいく。
+              ボランティアをもっと身近に、 そして想いを伝え、繋いでいく。
               <br />
             </p>
             <div className="flex justify-center">

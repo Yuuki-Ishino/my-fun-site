@@ -16,7 +16,9 @@ export async function addActivity(formData) {
       .upload(fileName, imageFile, { contentType: imageFile.type });
     if (uploadError) throw uploadError;
 
-    const { data } = supabase.storage.from("activity-imgs").getPublicUrl(fileName);
+    const { data } = supabase.storage
+      .from("activity-imgs")
+      .getPublicUrl(fileName);
     imageUrl = data.publicUrl;
   }
 

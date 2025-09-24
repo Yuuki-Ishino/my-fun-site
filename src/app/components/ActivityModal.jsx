@@ -65,13 +65,14 @@ export default function ActivityModal({ activity, onClose }) {
           {/* 投稿情報 */}
           <div className="py-4 space-y-3 border-b border-white">
             <div className="flex items-center gap-2">
-              <p>活動日: { 
-                activity.date 
+              <p>
+                活動日:{" "}
+                {activity.date
                   ? activity.subdate
                     ? `${dayjs(activity.date).format("YYYY年M月D日(ddd)")} - ${dayjs(activity.subdate).format("M月D日(ddd)")}`
                     : dayjs(activity.date).format("YYYY年M月D日(ddd)")
-                  : "未確定"
-              }</p>
+                  : "未確定"}
+              </p>
             </div>
             <div className="flex items-center gap-2">
               <p>活動場所: {activity.location || "未確定"}</p>

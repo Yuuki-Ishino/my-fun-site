@@ -9,7 +9,6 @@ export default async function ActivitySection() {
   return (
     <section className="text-white pt-20 lg:py-20">
       <div className="w-[90%] mx-auto max-w-[1280px] pb-20 border-b border-white">
-        
         <h3 className="text-[20px] font-bold mb-5">PAST ACTIVITIES</h3>
         <h2 className="text-[30px] font-bold mb-[14px]">今までの活動</h2>
         <div className="flex flex-col lg:flex-row justify-between">

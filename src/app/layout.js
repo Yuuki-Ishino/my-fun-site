@@ -7,7 +7,13 @@ export const metadata = {
   siteName: "Bbooth",
   locale: "ja_JP",
   type: "website",
-  keywords: ["Bbooth", "東洋大学", "サークル", "ボランティアサークル", "学生ボランティア"], // サイト共通キーワード
+  keywords: [
+    "Bbooth",
+    "東洋大学",
+    "サークル",
+    "ボランティアサークル",
+    "学生ボランティア",
+  ], // サイト共通キーワード
 };
 
 export default function RootLayout({ children }) {

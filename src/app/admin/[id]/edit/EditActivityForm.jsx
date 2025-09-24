@@ -88,10 +88,9 @@ export default function EditActivityForm({ activity }) {
   };
 
   const handleDelete = async () => {
-    if (!confirm("本当に削除しますか？"))
-      return ;
+    if (!confirm("本当に削除しますか？")) return;
     await deleteActivity(activity);
-  }
+  };
 
   return (
     <form
