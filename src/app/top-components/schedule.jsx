@@ -11,6 +11,7 @@ dayjs.locale("ja");
 export default function TimeSchedule() {
   const [latestItems, setLatestItems] = useState([]);
   const [selectedActivity, setSelectedActivity] = useState(null);
+  const [onClickTT, setOnClickTT] = useState(false);
 
   useEffect(() => {
     const fetchActivities = async () => {
@@ -26,7 +27,7 @@ export default function TimeSchedule() {
         <h3 className="text-[20px] font-bold mb-5">SCHEDULE</h3>
         <h2 className="text-[30px] font-bold mb-[14px]">活動予定</h2>
 
-        <ul className="w-[90%] max-w-[400px] pl-5 flex flex-col justify-between">
+        <ul className="w-[90%] max-w-[600px] pl-5 flex flex-col justify-between">
           {latestItems.map((item) => (
             <li
               key={item.id}
@@ -45,6 +46,37 @@ export default function TimeSchedule() {
           ))}
         </ul>
 
+        
+        <div className="pt-10  flex justify-center">
+          <button
+            onClick={() => setOnClickTT(!onClickTT)}
+            className="
+              inline-block w-[270px] h-[60px] text-[20px] font-bold 
+              text-white border border-white rounded-full 
+              text-center leading-[60px] transition-colors duration-200
+              hover:bg-white hover:text-black active:bg-white active:text-black
+            "
+          >
+            TimeTree
+          </button>
+        </div>
+
+        {/* タイムツリー */}
+        { onClickTT && (
+          <div className="pt-10">
+            <iframe
+              title="カレンダー"
+              src="https://timetreeapp.com/public_calendars/bbooth/embed/monthly?calendar_name=true&frame_color=%23212121"
+              style={{
+                width: '100%',
+                minHeight: '700px',
+                aspectRatio: '680 / 720',
+                border: 'none'
+              }}
+            ></iframe>
+          </div>
+        )}
+        
         {selectedActivity && (
           <ActivityModal
             activity={selectedActivity}
