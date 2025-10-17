@@ -46,7 +46,6 @@ export default function TimeSchedule() {
           ))}
         </ul>
 
-        
         <div className="pt-10  flex justify-center">
           <button
             onClick={() => setOnClickTT(!onClickTT)}
@@ -66,7 +65,7 @@ export default function TimeSchedule() {
           <div className="pt-10">
             <iframe
               title="カレンダー"
-              src="https://timetreeapp.com/public_calendars/bbooth/embed/monthly?calendar_name=true&frame_color=%23212121"
+              src="https://timetreeapp.com/public_calendars/bbooth/embed/list?calendar_name=true&frame_color=%23212121"
               style={{
                 width: '100%',
                 minHeight: '700px',
