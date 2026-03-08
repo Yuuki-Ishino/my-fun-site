@@ -1,17 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function TeamCard({ name, subname, role, image, description }) {
+export default function TeamCard({ name, subname, color, birth, brood, favo, nfavo, image, description, }) {
   return (
-    <div className="bg-gray-200 p-6 rounded-lg shadow-lg transition">
-      <div className="w-full h-60 rounded-lg overflow-hidden  mb-4 relative">
-        <Image src={image} alt={name} fill className="object-cover" />
+    <Link href={`/members/${subname}`}>
+      <div className="transition cursor-pointer">
+        <div className="w-full aspect-[3/4.5] overflow-hidden mb-2 relative">
+          <Image src={image} alt={name} fill className="object-contain"/>
+        </div>
       </div>
-      <p className="text-sm text-gray-600">{subname}</p>
-      <div className="flex items-center gap-2">
-        <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
-        <p className="text-sm pl-4 text-gray-600">{role}</p>
-      </div>
-      <p className="text-gray-700 mt-4">{description}</p>
-    </div>
+    </Link>
   );
 }

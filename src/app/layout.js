@@ -1,35 +1,38 @@
-import Header from "./top-components/Header";
-import Footer from "./top-components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import "../styles/globals.css";
 
 export const metadata = {
-  title: "Bbooth",
-  description: "東洋大学公式ボランティアサークル Bbooth",
+  title: "くう | Dream & Dream",
+  description: "メンズ地下アイドル Dream & Dream「くう」の自作ファンサイト。ライブ情報、イベント、会場案内などを掲載。",
   metadataBase: new URL("https://bbooth.vercel.app"),
+
   keywords: [
-    "Bbooth",
-    "東洋大学",
-    "サークル",
-    "ボランティアサークル",
-    "学生ボランティア",
+    "くう",
+    "Dream & Dream",
+    "メンズ地下アイドル",
+    "メン地下",
+    "地下アイドル",
+    "ライブ情報",
   ],
+
   icons: {
     icon: "/favicon.ico",
-    apple: "/images/logo02.jpg",
   },
+
   openGraph: {
-    title: "Bbooth",
-    description: "東洋大学公式ボランティアサークル Bbooth",
+    title: "くう | Dream & Dream",
+    description: "メンズ地下アイドル Dream & Dream「くう」の自作ファンサイト。",
     url: "https://bbooth.vercel.app",
-    siteName: "Bbooth",
+    siteName: "くう Fan Site",
     locale: "ja_JP",
     type: "website",
     images: [
       {
-        url: "/images/top-image.jpg", // 共通OG画像（相対パスでOK）
+        url: "/images/ogp.jpg",
         width: 1200,
         height: 630,
-        alt: "Bbooth サイトイメージ",
+        alt: "くう Dream & Dream",
       },
     ],
   },

@@ -1,15 +1,11 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Hamburger from "./Hamburger";
 
 function Header() {
   const baseNavItems = [
-    { href: "/aboutUs", label: "🔰初めての方へ" },
+    { href: "/firstTime", label: "🔰初めての方へ" },
     { href: "/members", label: "メンバー紹介" },
-    // { href: "/intro", label: "活動紹介" },
-    { href: "/activities", label: "会場一覧" },
+    { href: "/stage", label: "会場一覧" },
     { href: "/#contact", label: "お問い合わせ" },
   ];
 

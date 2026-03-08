@@ -1,9 +1,9 @@
-import { FaLine, FaXTwitter, FaInstagram } from "react-icons/fa6";
+import { FaXTwitter, FaInstagram, FaTiktok } from "react-icons/fa6";
 
 function ContactSection() {
   return (
     <section id="contact" className="text-white pt-20">
-      <div className="w-[90%] mx-auto max-w-[1280px] pb-20 border-b border-white">
+      <div className="w-[90%] mx-auto max-w-[1280px] pb-20">
         <div className="flex flex-col justify-between">
           {/* メッセージ */}
           <div className="">
@@ -18,7 +18,7 @@ function ContactSection() {
           <div className="flex space-x-8 mx-auto">
             {/* INSTAGRAM */}
             <a
-              href="https://instagram.com/_u/bbooth2025"
+              href="https://www.instagram.com/ku_dredre/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-4xl hover:text-pink-400 active:text-pink-400 transition-colors"
@@ -28,12 +28,22 @@ function ContactSection() {
 
             {/* X */}
             <a
-              href="https://x.com/bbooth2025"
+              href="https://x.com/ku_dredre"
               target="_blank"
               rel="noopener noreferrer"
               className="text-4xl hover:text-blue-400 active:text-blue-400 transition-colors"
             >
               <FaXTwitter />
+            </a>
+
+            {/* Tiktok */}
+            <a
+            href="https://www.tiktok.com/@ku_dredre"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-4xl hover:text-red-400 active:text-red-400 transition-colors"
+            >
+            <FaTiktok />
             </a>
 
           </div>
@@ -42,7 +52,9 @@ function ContactSection() {
               Instagram : 普段の生活や写真等
               <br/>
               X : スケジュール等の情報や個人的なつぶやき
-            </p>
+              <br/>
+              Tiktok : 配信等
+          </p>
         </div>
       </div>
     </section>

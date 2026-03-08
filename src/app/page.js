@@ -1,17 +1,17 @@
 // app/page.jsx
 import MainVisual from "./top-components/MainVisual";
-import MessageSection from "./top-components/MessageSection";
-import ActivitySection from "./top-components/ActivitySection";
+import FirstTime from "./top-components/FirstTime";
+import TimeSchedule from "./top-components/Schedule";
+import Events from "./top-components/Events";
 import ContactSection from "./top-components/ContactSection";
-import TimeSchedule from "./top-components/schedule";
 
 export const metadata = {
-  title: "Bbooth",
-  description: "Bboothは東洋大学の学生が運営するボランティアサークルです。",
+  title: "くう | Dream & Dream",
+  description: "メンズ地下アイドル Dream & Dream「くう」の自作ファンサイト。ライブ情報・イベント情報などを掲載しています。",
   openGraph: {
-    title: "Bbooth",
-    description: "Bboothは東洋大学の学生が運営するボランティアサークルです。",
-    images: ["/images/top-image.jpg"],
+    title: "くう | Dream & Dream",
+    description: "メンズ地下アイドル Dream & Dream「くう」の自作ファンサイト。",
+    images: ["/images/ogp.jpg"],
   },
 };
 
@@ -19,11 +19,11 @@ export const revalidate = 60;
 
 export default function Page() {
   return (
-    <div className="bg-img">
+    <div className="bg-img max-w-2xl mx-auto">
       <MainVisual />
-      <MessageSection />
+      <FirstTime />
       <TimeSchedule />
-      {/* <ActivitySection /> */}
+      <Events />
       <ContactSection imageSrc="/images/top-image.jpg" />
     </div>
   );
