@@ -1,7 +1,7 @@
 // app/page.jsx
 import MainVisual from "./top-components/MainVisual";
 import FirstTime from "./top-components/FirstTime";
-import Schedule from "./top-components/Schedule";
+import Schedule from "./top-components/Schedule.jsx";
 import Events from "./top-components/Events";
 import ContactSection from "./top-components/ContactSection";
 
