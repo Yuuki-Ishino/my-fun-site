@@ -6,10 +6,13 @@ const members = {
     name: "くう",
 		subname: "Kuu",
 		color: "blue",
+		old: "23",
 		birth: "9月14日",
+		height: "174cm",
+		weight: "秘密",
 		brood: "A",
 		favo: "パソコン",
-		nfavo: "謙虚",
+		nfavo: "スカさないこと",
 		mbti: "ENTP",
 		image: "/images/members/Kuu.JPG",
 		description: "お家のワンちゃんの名前もくうです。",
@@ -21,7 +24,10 @@ const members = {
     name: "あやせ",
 		subname: "Ayase",
 		color: "red",
+		old: "",
 		birth: "",
+		height: "",
+		weight: "",
 		brood: "",
 		favo: "",
 		nfavo: "",
@@ -36,13 +42,16 @@ const members = {
     name: "ひなせ",
 		subname: "Hinase",
 		color: "white",
-		birth: "",
-		brood: "",
-		favo: "",
-		nfavo: "",
-		mbti: "",
+		old: "23",
+		birth: "3月17日",
+		height: "178",
+		weight: "だいたい🍎193個分",
+		brood: "O",
+		favo: "牛乳！",
+		nfavo: "牛乳><",
+		mbti: "ENTP",
 		image: "/images/members/Hinase.JPG",
-		description: "",
+		description: "そういうこと",
 		instagram: "https://www.instagram.com/hinase__dredre/",
 		X: "https://x.com/hinase_dredre",
 		tiktok: "https://www.tiktok.com/@hinase_dredre"
@@ -51,7 +60,10 @@ const members = {
     name: "しの",
 		subname: "Shino",
 		color: "purple",
+		old: "",
 		birth: "",
+		height: "",
+		weight: "",
 		brood: "",
 		favo: "",
 		nfavo: "",
@@ -66,7 +78,10 @@ const members = {
     name: "たいよう",
 		subname: "Taiyou",
 		color: "yellow",
+		old: "",
 		birth: "",
+		height: "",
+		weight: "",
 		brood: "",
 		favo: "",
 		nfavo: "",
@@ -81,7 +96,10 @@ const members = {
     name: "かなめ",
 		subname: "Kaname",
 		color: "green",
+		old: "",
 		birth: "",
+		height: "",
+		weight: "",
 		brood: "",
 		favo: "",
 		nfavo: "",
@@ -96,7 +114,10 @@ const members = {
     name: "とらまる",
 		subname: "Toramaru",
 		color: "orange",
+		old: "",
 		birth: "",
+		height: "",
+		weight: "",
 		brood: "",
 		favo: "",
 		nfavo: "",
@@ -177,9 +198,24 @@ export default async function MemberPage({ params }) {
           <span>{member.color}</span>
         </div>
 
+				<div className="flex">
+          <span className="w-40 font-semibold">年齢</span>
+          <span>{member.old}</span>
+        </div>
+
         <div className="flex">
           <span className="w-40 font-semibold">誕生日</span>
           <span>{member.birth}</span>
+        </div>
+
+				<div className="flex">
+          <span className="w-40 font-semibold">身長</span>
+          <span>{member.height}</span>
+        </div>
+
+				<div className="flex">
+          <span className="w-40 font-semibold">体重</span>
+          <span>{member.weight}</span>
         </div>
 
         <div className="flex">

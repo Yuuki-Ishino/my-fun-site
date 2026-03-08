@@ -3,8 +3,8 @@ import Button from "../components/Button";
 
 export default function Page() {
   return (
-    <section className="bg-img no-bg min-h-screen text-white pt-20">
-      <div className="max-w-2xl mx-auto bg-[#1e46a3ee] px-5 py-5 space-y-12">
+    <section className="bg-img no-bg min-h-screen text-white">
+      <div className="max-w-2xl mx-auto bg-[#1e46a3ee] px-5 py-15 space-y-12">
 
         <div id="ticket" className="pt-10 text-center space-y-6">
           <h2 className="text-4xl font-bold">会場一覧</h2>
