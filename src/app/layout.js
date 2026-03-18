@@ -5,7 +5,7 @@ import "../styles/globals.css";
 export const metadata = {
   title: "くう | Dream & Dream",
   description: "メンズ地下アイドル Dream & Dream「くう」の自作ファンサイト。ライブ情報、イベント、会場案内などを掲載。",
-  metadataBase: new URL("https://bbooth.vercel.app"),
+  metadataBase: new URL("https://kuu-fansite.vercel.app"),
 
   keywords: [
     "くう",
@@ -23,13 +23,13 @@ export const metadata = {
   openGraph: {
     title: "くう | Dream & Dream",
     description: "メンズ地下アイドル Dream & Dream「くう」の自作ファンサイト。",
-    url: "https://bbooth.vercel.app",
+    url: "https://kuu-fansite.vercel.app",
     siteName: "くう Fan Site",
     locale: "ja_JP",
     type: "website",
     images: [
       {
-        url: "/images/ogp.jpg",
+        url: "/images/members/dredre_members.PNG",
         width: 1200,
         height: 630,
         alt: "くう Dream & Dream",

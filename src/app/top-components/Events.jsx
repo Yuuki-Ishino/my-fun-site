@@ -37,15 +37,6 @@ export default function Events() {
 					/>
 				</div>
 
-				<div className="relative w-full aspect-[4.2/3] rounded-lg overflow-hidden">
-					<Image
-					  src="/images/events/e3.JPG"
-					  alt="e_schedule"
-					  fill
-					  className="object-cover"
-					/>
-				</div>
-
 				</div>
 
       </div>

@@ -1,12 +1,12 @@
 import TeamCard from "../components/teamCard";
 
 export const metadata = {
-  title: "Bbooth メンバー",
-  description: "東洋大学ボランティアサークルBboothのメンバー紹介ページ。",
+  title: "Dream & Dream | メンバー紹介",
+  description: "Dream & Dream のメンバー紹介。アー写クリックで詳細が見れます。",
   openGraph: {
-    title: "Bbooth メンバー",
-    description: "東洋大学ボランティアサークルBboothのメンバー紹介ページ。",
-    images: ["/images/10th_img.jpg"],
+    title: "Dream & Dream | メンバー紹介",
+    description: "Dream & Dream のメンバー紹介。アー写クリックで詳細が見れます。",
+    images: ["/images/members/dredre_members.PNG"],
   },
 };
 
