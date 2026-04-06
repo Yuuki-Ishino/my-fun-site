@@ -130,8 +130,8 @@ const members = {
   },
 };
 
-export default function MemberPage({ params }) {
-	const { name } = params;
+export default async function MemberPage({ params }) {
+	const { name } = await params;
   const member = members[name];
 
   if (!member) {
