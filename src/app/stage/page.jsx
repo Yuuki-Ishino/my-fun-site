@@ -1,7 +1,9 @@
 import Accordion from "@/app/components/Accordion";
 import Button from "../components/Button";
 
-export default function Page() {
+export default async function Page({ searchParams }) {
+  const {open} = await searchParams;
+
   return (
     <section className="bg-img no-bg min-h-screen text-white">
       <div className="max-w-2xl mx-auto bg-[#1e46a3ee] px-5 py-15 space-y-12">
@@ -28,7 +30,11 @@ export default function Page() {
         <div className="space-y-4">
 
           <h2 className="font-bold">吉祥寺エリア</h2>
-          <Accordion title="📍GRAND SLAM - グランドスラム">
+          <Accordion
+            id="grandslam" 
+            title="📍GRAND SLAM - グランドスラム"
+            isOpen={open === "grandslam"}
+          >
             <p className="mb-2">最寄駅：吉祥寺駅 （ 徒歩 5分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -47,7 +53,11 @@ export default function Page() {
           </Accordion>
 
           <h2 className="font-bold">新宿エリア</h2>
-          <Accordion title="📍SCIENCE - サイエンス">
+          <Accordion 
+            id="science"
+            title="📍SCIENCE - サイエンス"
+            isOpen={open === "science"}
+          >
             <p className="mb-2">最寄駅：新宿駅 （ 徒歩 7分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -65,7 +75,11 @@ export default function Page() {
             </div>
           </Accordion>
           
-          <Accordion title="📍Cat's hole - キャッツホール">
+          <Accordion 
+            id="catshole"
+            title="📍Cat's hole - キャッツホール"
+            isOpen={open === "catshole"}
+            >
             <p className="mb-2">最寄駅：東新宿駅 （ 徒歩 5分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -83,7 +97,11 @@ export default function Page() {
             </div>
           </Accordion>
 
-          <Accordion title="📍HEAD POWER - ヘッドパワー">
+          <Accordion 
+            id="headpower"
+            title="📍HEAD POWER - ヘッドパワー"
+            isOpen={open === "headpower"}
+          >
             <p className="mb-2">最寄駅：東新宿駅 （ 徒歩 6分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -101,7 +119,11 @@ export default function Page() {
             </div>
           </Accordion>
 
-          <Accordion title="📍Atelier - アトリエ">
+          <Accordion 
+            id="atelier"
+            title="📍Atelier - アトリエ"
+            isOpen={open === "atelier"}
+          >
             <p className="mb-2">最寄駅：若松河田駅 （ 徒歩 2分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -119,7 +141,11 @@ export default function Page() {
             </div>
           </Accordion>
 
-          <Accordion title="📍Lotus - 四谷ロータス">
+          <Accordion 
+            id="lotus"
+            title="📍Lotus - 四谷ロータス"
+            isOpen={open === "lotus"}
+          >
             <p className="mb-2">最寄駅：四谷三丁目駅 （ 徒歩 3分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -137,7 +163,11 @@ export default function Page() {
             </div>
           </Accordion>
 
-          <Accordion title="📍SHINJUKU ACE - 新宿ACE">
+          <Accordion 
+            id="ace"
+            title="📍SHINJUKU ACE - 新宿ACE"
+            isOpen={open === "ace"}
+          >
             <p className="mb-2">最寄駅：新宿駅 （ 徒歩 10分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -156,7 +186,11 @@ export default function Page() {
           </Accordion>
 
           <h2 className="font-bold">池袋エリア</h2>
-          <Accordion title="📍Re:voice - リヴォイス">
+          <Accordion 
+            id="revoice"
+            title="📍Re:voice - リヴォイス"
+            isOpen={open === "revoice"}
+          >
             <p className="mb-2">最寄駅：池袋駅 （ 徒歩 7分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -174,7 +208,11 @@ export default function Page() {
             </div>
           </Accordion>
 
-          <Accordion title="📍mono - モノ">
+          <Accordion 
+            id="mono"
+            title="📍mono - モノ"
+            isOpen={open === "mono"}
+          >
             <p className="mb-2">最寄駅：池袋駅 （ 徒歩 5分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -193,7 +231,11 @@ export default function Page() {
           </Accordion>
 
           <h2 className="font-bold">渋谷エリア</h2>
-          <Accordion title="📍RING - リング">
+          <Accordion 
+            id="ring"
+            title="📍RING - リング"
+            isOpen={open === "ring"}
+          >
             <p className="mb-2">最寄駅：渋谷駅 （ 徒歩 10分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -211,7 +253,11 @@ export default function Page() {
             </div>
           </Accordion>
 
-          <Accordion title="📍CAMELOT - キャメロット">
+          <Accordion 
+            id="camelot"
+            title="📍CAMELOT - キャメロット"
+            isOpen={open === "camelot"}
+          >
             <p className="mb-2">最寄駅：渋谷駅 （ 徒歩 9分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -229,7 +275,11 @@ export default function Page() {
             </div>
           </Accordion>
 
-          <Accordion title="📍Milkyway - ミルキーウェイ">
+          <Accordion 
+            id="milkyway"
+            title="📍Milkyway - ミルキーウェイ"
+            isOpen={open === "milyway"}
+          >
             <p className="mb-2">最寄駅：渋谷駅 （ 徒歩 9分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -248,7 +298,11 @@ export default function Page() {
           </Accordion>
           
           <h2 className="font-bold">秋葉原エリア</h2>
-          <Accordion title="📍ZEST - ゼスト">
+          <Accordion 
+            id="zest"
+            title="📍ZEST - ゼスト"
+            isOpen={open === "zest"}
+          >
             <p className="mb-2">最寄駅：秋葉原駅 （ 徒歩 7分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -267,7 +321,11 @@ export default function Page() {
           </Accordion>
           
           <h2 className="font-bold">撮影会</h2>
-          <Accordion title="📍CR-VITEビル">
+          <Accordion 
+            id="crvite"
+            title="📍CR-VITEビル"
+            isOpen={open === "crvite"}
+          >
             <p className="mb-2">最寄駅：渋谷駅 （ 徒歩 4分 ）</p>
             <div className="w-full aspect-video">
               <iframe
@@ -285,7 +343,11 @@ export default function Page() {
             </div>
           </Accordion>
 
-          <Accordion title="📍宇田川ビルディング">
+          <Accordion 
+            id="udagawa"
+            title="📍宇田川ビルディング"
+            isOpen={open === "udagawa"}
+          >
             <p className="mb-2">最寄駅：渋谷駅 （ 徒歩 9分 ）</p>
             <div className="w-full aspect-video">
               <iframe

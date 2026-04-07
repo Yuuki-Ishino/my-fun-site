@@ -1,12 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
-export default function Accordion({ title, children }) {
+export default function Accordion({ id, title, children, isOpen}) {
   const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setOpen(true);
+      setTimeout(() => {
+        ref.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 100);
+    }
+  }, [isOpen]);
 
   return (
-    <div className="border border-white/20 rounded-xl overflow-hidden">
+    <div id={id} ref={ref} className="border border-white/20 rounded-xl overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex justify-between items-center px-4 py-4  hover:bg-white/10 transition"
