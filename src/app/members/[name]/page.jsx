@@ -12,7 +12,7 @@ const members = {
 		weight: "秘密",
 		brood: "A",
 		favo: "パソコン",
-		nfavo: "寝てるところ起こされるとき",
+		nfavo: "起きること",
 		mbti: "ENTP",
 		image: "/images/members/Kuu.JPG",
 		description: "お家のワンちゃんの名前もくうです。",
