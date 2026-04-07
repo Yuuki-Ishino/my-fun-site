@@ -36,8 +36,8 @@ export default function Events() {
 
 					<div className="relative w-full aspect-[4.2/3] rounded-lg overflow-hidden">
 						<Image
-							src="/images/events/202604151.jpg"
-							alt="e4_schedule"
+							src="/images/events/202604151.JPG"
+							alt="202604151_schedule"
 							fill
 							className="object-cover"
 						/>
@@ -45,8 +45,8 @@ export default function Events() {
 
 					<div className="relative w-full aspect-[4.2/3] rounded-lg overflow-hidden">
 						<Image
-							src="/images/events/202604152.jpg"
-							alt="e4_schedule"
+							src="/images/events/202604152.JPG"
+							alt="202604152_schedule"
 							fill
 							className="object-cover"
 						/>
