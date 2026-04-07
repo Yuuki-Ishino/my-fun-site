@@ -29,7 +29,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/images/members/dredre_members.PNG",
+        url: "/images/top_meta.jpg",
         width: 1200,
         height: 630,
         alt: "くう Dream & Dream",

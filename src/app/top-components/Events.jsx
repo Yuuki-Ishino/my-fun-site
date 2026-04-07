@@ -24,14 +24,6 @@ export default function Events() {
 
 				<h2 className="text-[30px] font-bold my-[14px]">イベント</h2>
 				<div className="space-y-5">
-					<div className="relative w-full aspect-[4.2/3] rounded-lg overflow-hidden">
-						<Image
-							src="/images/events/e1.JPG"
-							alt="e1_schedule"
-							fill
-							className="object-cover"
-						/>
-					</div>
 
 					<div className="relative w-full aspect-[4.2/3] rounded-lg overflow-hidden">
 						<Image
@@ -42,7 +34,24 @@ export default function Events() {
 						/>
 					</div>
 
-					
+					<div className="relative w-full aspect-[4.2/3] rounded-lg overflow-hidden">
+						<Image
+							src="/images/events/202604151.jpg"
+							alt="e4_schedule"
+							fill
+							className="object-cover"
+						/>
+					</div>
+
+					<div className="relative w-full aspect-[4.2/3] rounded-lg overflow-hidden">
+						<Image
+							src="/images/events/202604152.jpg"
+							alt="e4_schedule"
+							fill
+							className="object-cover"
+						/>
+					</div>
+
 
 				</div>
 

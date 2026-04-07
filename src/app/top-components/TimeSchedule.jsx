@@ -6,10 +6,21 @@ export default function Schedule() {
     <section className="text-white pt-20 lg:py-20">
       <div className="w-[90%] mx-auto max-w-[1280px] pb-10 border-b">
         <h3 className="text-[20px] font-bold mb-5">SCHEDULE</h3>
-        <h2 className="text-[30px] font-bold mb-[14px]">スケジュール</h2>
+        <h2 className="text-[30px] font-bold mb-[14px]">グループスケジュール</h2>
         
+        <div className="relative w-full aspect-[4/7] rounded-lg overflow-hidden">
+          <Image
+            src="/images/events/g202604.JPG"
+            alt="イベントカレンダー"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        <h2 className="text-[30px] pt-10 font-bold mb-[14px]">Latteスケジュール</h2>
+
         {/* タイムツリー */}
-        <div className="pt-10">
+        <div className="">
           <iframe
             title="カレンダー"
             src="https://timetreeapp.com/public_calendars/latte/embed/2weeks?calendar_name=true&frame_color=%2347b2f7"
@@ -27,14 +38,7 @@ export default function Schedule() {
           ※ ダウンロード済みの方はLatteカレンダーをフォローしましょう!
         </p>
 
-        <div className="relative w-full aspect-[4/7] rounded-lg overflow-hidden">
-          <Image
-            src="/images/events/g202604.JPG"
-            alt="イベントカレンダー"
-            fill
-            className="object-cover"
-          />
-        </div>
+        
 
       </div>
     </section>

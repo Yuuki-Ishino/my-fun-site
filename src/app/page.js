@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: "くう | Dream & Dream",
     description: "メンズ地下アイドル Dream & Dream「くう」の自作ファンサイト。",
-    images: ["/images/members/dredre_members.PNG"],
+    images: ["/images/top_meta.jpg"],
   },
 };
 
