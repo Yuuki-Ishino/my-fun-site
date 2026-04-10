@@ -1,5 +1,6 @@
 import Accordion from "@/app/components/Accordion";
 import Button from "../components/Button";
+import ShareButton from "../components/ShareButton";
 
 export default async function Page({ searchParams }) {
   const {open} = await searchParams;
@@ -35,7 +36,11 @@ export default async function Page({ searchParams }) {
             title="📍GRAND SLAM - グランドスラム"
             isOpen={open === "grandslam"}
           >
-            <p className="mb-2">最寄駅：吉祥寺駅 （ 徒歩 5分 ）</p>
+            <div className="flex items-center justify-between mb-2">
+              <p>最寄駅：吉祥寺駅 （ 徒歩 5分 ）</p>
+              <ShareButton id="grandslam" />
+            </div>
+            
             <div className="w-full aspect-video">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.862805179789!2d139.5801924!3d35.704993599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ef005a408ad7%3A0x33579fd9f3159f07!2z77yn77yy77yh77yu77ykIO-8s--8rO-8oe-8re-8iOOCsOODqeOCueODqeODu-OCsOODqeODs-ODieOCueODqeODoO-8iQ!5e0!3m2!1sja!2sjp!4v1772574149228!5m2!1sja!2sjp"
@@ -278,7 +283,7 @@ export default async function Page({ searchParams }) {
           <Accordion 
             id="milkyway"
             title="📍Milkyway - ミルキーウェイ"
-            isOpen={open === "milyway"}
+            isOpen={open === "milkyway"}
           >
             <p className="mb-2">最寄駅：渋谷駅 （ 徒歩 9分 ）</p>
             <div className="w-full aspect-video">
