@@ -11,7 +11,7 @@ export default function ShareButton({ id }) {
       try {
         await navigator.share({
           title: "会場情報",
-          text: "この会場チェックして！",
+          text: "",
           url: url,
         });
       } catch (err) {
